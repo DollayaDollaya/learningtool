@@ -56,12 +56,17 @@
           // Make the database point to the location root -> deck -> flashcards
 // If the location doesn't exist is will be created
 // Create the reference location
-let dbLocation = app.database().ref('deck/flashcards');  
+//let dbLocation = app.database().ref('deck/flashcards');  
 
 // myFlashcards will be stored under flashcards in the database
 // Anything that was in this location will be overwritten 
 // Thus, a write operation also does an update
-dbLocation.set(myFlashcards);
+//dbLocation.set(myFlashcards);
+      import { getDatabase, ref, set } from "firebase/database";
+
+
+  const db = getDatabase(app);
+  set(ref(db, 'deck/flashcards'),myFlashcards);
       </script>
       
 </body></html>
