@@ -34,10 +34,9 @@
   };
 
   // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>   
-      <script>
+  let app = initializeApp(firebaseConfig);
+  let analytics = getAnalytics(app);
+
       let myFlashcards = [ {
     "question": "Name this species of bird.",
     "image" : "images/barn-owl-2550068__340.webp",
