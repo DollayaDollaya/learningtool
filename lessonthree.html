@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Test</title>
+  </head>
+  <body>
+
+<br/> <a href = "index2.html"> Index </a>
+<br/> <a href = "lessonone.html"> Lesson One - Camera </a>
+<br/> <a href = "lessontwo.html"> Lesson Two - Microphone </a>
+<br/> <a href = "lessonthree.html"> Lesson Three - Lighting </a>
+<br/> <a href = "summative.html"> Test your understanding </a>
+<br/> <a href = "teacherdashboard.html"> Teacher dashboard </a>
+
+</br> <H1> Lighting </H1>
+</br> <H2> Learning Objectives </H2>
+<ul> 
+  <li> To explain different types of lighting equipment </li>
+</ul>
+
+</br> <img 
+           src = "image/led.jpeg" 
+           title = "LED"
+           Height = "500"
+           width = "500">
+<p style = "color: red; font-size: 15 px; font-family: 'Courier New';"> LED Video Light </p> 
+<H3> Pros </H3>
+<ul> 
+  <li> strong lighting (not soft) </li>
+</ul>
+<H3> Cons </H3>
+<ul>
+  <li> This lighting might not help you look more beautiful. </li>
+</ul>
+
+
+</br> <img 
+           src = "image/ringlight.jpeg" 
+           title = "RingLight"
+           Height = "500"
+           width = "500">
+<p style = "color: red; font-size: 15 px; font-family: 'Courier New';"> Ring Light </p> 
+</br> <H3> Pros </H3>
+<ul> 
+  <li> inexpensive </li>
+</ul>
+
+</br> <H3> Cons </H3>
+<ul>
+  <li> Ring Light can't be stationned that far from you. </li>
+</ul>
+
+===
+
+</br> <img 
+           src = "image/softbox.jpeg" 
+           title = "Soft Box"
+           Height = "500"
+           width = "500">
+<p style = "color: red; font-size: 15 px; font-family: 'Courier New';"> Soft Box </p> 
+</br> <H3> Pros </H3>
+<ul> 
+  <li> Reduce Contrast and Sharpness. </li>
+</ul>
+
+</br> <H3> Cons </H3>
+<ul>
+  <li> Don't Work With Natural Lighting.</li>
+</ul>
+
+<button id="question-1-submit">Submit</button>
+    </div>
+
+    <div>
+      <h2>Question 2</h2>
+      <p>Lorem ipsum dolor sit amet,</p>
+      <label>
+        This is a textarea
+        <textarea></textarea>
+      </label>
+      <button id="question-2-submit">Submit</button>
+    </div>
+
+    <div>
+      <h2>Question 3</h2>
+      <p>Lorem ipsum dolor sit amet,</p>
+
+      <label>
+        <input type="radio" name="question-3" />
+        Choice 1
+      </label>
+      <label>
+        <input type="radio" name="question-3" />
+        Choice 2
+      </label>
+      <label>
+        <input type="radio" name="question-3" />
+        Choice 3
+      </label>
+      <label>
+        <input type="radio" name="question-3" />
+        Choice 4
+      </label>
+
+      <button id="question-3-submit">Submit</button>
+    </div>
+  </body>
+  <script>
+    function displayRadioValue(question) {
+      var ele = document.getElementsByName(question);
+      var value;
+      for (i = 0; i < ele.length; i++) {
+        if (ele[i].checked === true) {
+          value = ele[i].value;
+        }
+      }
+
+      return value;
+    }
+    function submitQuestion1() {
+      console.log('submit');
+      const val = displayRadioValue('question-1');
+
+      // Update firebase
+      // {
+      //   user1: {
+      //     question1: true,
+      //     question2: false
+      //   },
+      //   user2: {
+      //     question1: false,
+      //     question2: true
+      //   }
+      // }
+
+      const feedbackCorrect = document.getElementById('question-1-feedback-correct');
+      const feedbackIncorrect = document.getElementById('question-1-feedback-incorrect');
+      if (val === '3') {
+        feedbackCorrect.style.display = 'block';
+        feedbackIncorrect.style.display = 'none';
+      } else {
+        feedbackIncorrect.style.display = 'block';
+        feedbackCorrect.style.display = 'none';
+      }
+      // if (val === '3') {
+      //   alert('correct');
+      // } else {
+      //   alert('incorrect');
+      // }
+    }
+
+    const submitButton1 = document.getElementById('question-1-submit');
+    submitButton1.addEventListener('click', submitQuestion1);
+  </script>
+ </body>
+</html>
+
