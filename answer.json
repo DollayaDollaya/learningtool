@@ -1,0 +1,13 @@
+{
+"Question 1": {
+  "Hint": "Please take a look at my information",
+  "Associated skill": "Understanding",
+  "Question Type": "Multiple choice",
+  "Student response": {
+    "Name": "Dollaya",
+    "Response": [1,2]
+  },
+  "Correct Answer": 1,
+  "Incorrec Answer": [1,2]
+}
+}
